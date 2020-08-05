@@ -79,7 +79,7 @@ area_small_triangle1= findArea(side1,s1,s2);
 area_small_triangle2= findArea(side2,s1,s3);
 area_small_triangle3= findArea(side3,s3,s2);
 
-if (area_of_triangle < area_small_triangle1+ area_small_triangle2+ area_small_triangle3)
+if (area_of_triangle = area_small_triangle1+ area_small_triangle2+ area_small_triangle3)
 	printf("inside the triangle");
 else
 	printf("outside the triangle");
