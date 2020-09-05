@@ -30,45 +30,37 @@ void display (void)
 	glClearColor(0.0, 0.0, 0.0, 1.0); 
 	glClear(GL_COLOR_BUFFER_BIT); 		//clear buffers to preset values
 	
-	glColor3f(0.0, 0.0, 1.0);
-	gluOrtho2D(-780, 780, -420, 420);
-	glBegin(GL_POLYGON); 
-	
-	glVertex2f(0.0, 0.0);
-	glVertex2f(0.0, 200.0);
-	glVertex2f(200.0, 200.0);
-	glVertex2f(200.0, 0.0);
-	glEnd(); 
-	
-	glColor3f(1.0, 0.0, 1.0);
-	//gluOrtho2D(-780, 780, -420, 420);
-	glBegin(GL_TRIANGLES); 
-	glVertex2f(200.0, 200.0);
-	glVertex2f(0.0, 200.0);
-	glVertex2f(100.0, 300.0);
-	glEnd(); 
-	
 	glColor3f(1.0, 1.0, 1.0);
-	glBegin(GL_POLYGON); 
+	gluOrtho2D(-780, 780, -420, 420);
+	//glBegin(GL_POLYGON); 
 	
-	glVertex2f(35.0, 45.0);
-	glVertex2f(35.0, 80.0);
-	glVertex2f(65.0, 80.0);
-	glVertex2f(65.0, 45.0);
-	glEnd();
-	glBegin(GL_POLYGON); 
-	glVertex2f(135.0, 45.0);
-	glVertex2f(135.0, 80.0);
-	glVertex2f(165.0, 80.0);
-	glVertex2f(165.0, 45.0);
-	glEnd();
 	
-	glBegin(GL_POLYGON); 
-	glVertex2f(85.0, 80.0);
-	glVertex2f(85.0, 0.0);
-	glVertex2f(115.0, 0.0);
-	glVertex2f(115.0, 80.0);
-	glEnd();
+	
+	 float i;
+        glBegin(GL_POINTS);
+            
+            for(i = 0.0f; i <= 360; i=i+1)
+                
+                glVertex2f(round(50*cos(pi * i / 180.0)),round( 100*sin(pi * i / 180.0)));
+            
+            glEnd();
+        
+        /*glBegin(GL_TRIANGLE_FAN);
+       glColor3f(0.7, 0.7, 0.7);
+        glVertex2f(0, 0); // Center
+        for(i = 0.0f; i <= 360; i++)
+                glVertex2f(50*cos(pi * i / 180.0), 100*sin(pi * i / 180.0));
+        
+        glEnd();
+	
+	glBegin(GL_TRIANGLE_FAN);
+	//float i;
+	glColor3f(0.7, 0.7, 0.7);
+	glVertex2f(225, -100); // Center
+	for(i = 0.0f; i <= 360; i++)
+		glVertex2f(50*cos(pi * i / 180.0) + 225,50*sin(pi * i / 180.0) + -100);
+
+	glEnd();*/
 	glFlush(); 
 } 
 
